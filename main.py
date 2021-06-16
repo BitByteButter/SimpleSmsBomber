@@ -2,7 +2,7 @@ from bs4.builder import HTML_5
 import requests
 import random
 from bs4 import BeautifulSoup
-url ="https://cgpay.com.np/Home/SignUp"
+url =input("Enter the webiste")
 username =[
     "Chintamani Gartaula",
     "Ramchandra Rumba",
@@ -67,7 +67,7 @@ for i in range(int(nth)):
     # l= soup.find('input',attrs={'name':'__RequestVerificationToken'})['value']
     payload['__RequestVerificationToken'] =soup.find('input',attrs={'name':'__RequestVerificationToken'})['value']
     print(payload)
-    s=r.post("https://cgpay.com.np/Home/Login",data=payload,allow_redirects=True)
+    s=r.post(url,data=payload,allow_redirects=True)
     
     print(s.status_code)
 
